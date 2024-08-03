@@ -20,5 +20,8 @@
       "last 1 safari version"
     ]
   },
-  "start": "react-scripts start"
+  "start": "react-scripts start",
+   "scripts": {
+    "start": "react-scripts start"
+  }
 }
