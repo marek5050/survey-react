@@ -37,7 +37,7 @@ function SurveyComponent() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            country: 'Czechia',
+            country: sender.data['country'],
             additional_details: 'None',
           })
         })
