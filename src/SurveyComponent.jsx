@@ -30,6 +30,18 @@ function SurveyComponent() {
     const survey = new Model(json);
     survey.onComplete.add((sender, options) => {
         console.log(JSON.stringify(sender.data, null, 3));
+        fetch('https://survey-app-9ho7x.ondigitalocean.app/api/data', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            country: 'Czechia',
+            additional_details: 'None',
+          })
+        })
+
     });
     survey.onServerValidateQuestions.add(validateCountry);
     return (<Survey model={survey} />);
